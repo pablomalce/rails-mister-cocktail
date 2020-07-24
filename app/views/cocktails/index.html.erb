@@ -9,9 +9,9 @@
       <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <div class="row justify-content-around">
-            <%= link_to 'More info', cocktail_path(cocktail.id), class: "btn btn-primary m-2" %>
-            <%# <%= link_to 'Update cocktail', edit_cocktail_path(cocktail.id), class: "btn btn-warning m-2" %>
-            <%# <%= link_to 'delete', cocktail_path(cocktail.id), method: :delete, class: "btn btn-danger m-2" %>
+            <%= link_to 'More info', cocktail_path(cocktail), class: "btn btn-primary m-2" %>
+            <%= link_to 'Update cocktail', edit_cocktail_path(cocktail), class: "btn btn-warning m-2" %>
+            <%= link_to 'delete', cocktail_path(cocktail), method: :delete, class: "btn btn-danger m-2" %>
           </div>
       </div>
     </div>

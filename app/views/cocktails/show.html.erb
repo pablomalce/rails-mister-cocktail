@@ -1,20 +1,15 @@
-h1><%=@cocktail.name%></h1>
-<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class:"btn btn-primary" %>
-</div>
-<div class="container d-flex justify-content-between">
-  <div class="row row-cols-4">
-  <% @cocktail.doses.each do |dose| %>
-    <div class="card m-3 p-2">
-      <div class="card-body">
-          <h5 class="card-title"><%= dose.description %></h5>
-          <div class="row justify-content-around">
-            <%# <%= link_to 'More info', dose_path(dose.id), class: "btn btn-primary m-2" %>
-            <%# <%= link_to 'Update cocktail', edit_cocktail_path(cocktail.id), class: "btn btn-warning m-2" %>
-            <%# <%= link_to 'delete', cocktail_path(cocktail.id), method: :delete, class: "btn btn-danger m-2" %>
-          </div>
-      </div>
-    </div>
-    <%end%>
+<div class="banner" style="background: grey" %>
+  <div class="banner-content text-center py-4">
+    <h1><%= @cocktail.name %></h1>
+    <%= link_to "Back to all cocktails", cocktails_path %>
   </div>
 </div>
-
+<div class= "container text-center py-4">
+  <% @cocktail.doses.each do |dose| %>
+    <%= dose.description %>
+    <%= dose.ingredient.name%>
+    <%= link_to "Delete doce", cocktail_dose_path(@cocktail, dose), method: :delete %>
+  <% end %>
+  <br>
+<%= link_to "create Doses", new_cocktail_dose_path(@cocktail) %>
+</div>
