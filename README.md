@@ -9,7 +9,7 @@ Built on 23–24 July 2020 as the "Mister Cocktail" exercise of the Le Wagon ful
 ## What it does
 
 - Three models: `Cocktail`, `Ingredient` and `Dose` (a join model with a description such as "6cl", linking a cocktail to an ingredient). Names and descriptions are validated for presence and uniqueness.
-- Nested routes: list, view and create cocktails; add a dose to a cocktail or delete one from it. The index also links to edit and delete, but there is no `edit` view or `update` action, so editing does not work.
+- Nested routes: list, view and create cocktails; add a dose to a cocktail or delete one from it. The index also links to edit and delete, but there is no `edit` view or `update` action, so editing does not work. Deleting a cocktail removes the record, but the `destroy` action has no redirect or view, so the browser is not sent back to the list.
 - `db/seeds.rb` pulls the ingredient list from the public TheCocktailDB API and creates three sample cocktails.
 - Bootstrap-styled views with Simple Form and Font Awesome.
 
